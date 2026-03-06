@@ -2,7 +2,9 @@ from __future__ import annotations
 from typing import Any, Dict, List
 import numpy as np
 import pandas as pd
+import streamlit as st
 
+@st.cache_data
 def select_candidate_points(df: pd.DataFrame, max_points: int = 60, seed: int = 7) -> List[Dict[str, Any]]:
     use = df[df["discard_point"] != True].copy()  # noqa: E712
     cand = set()

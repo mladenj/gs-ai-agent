@@ -1,0 +1,16 @@
+cat > .gitignore <<'EOF'
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+
+# Virtual env / secrets
+.venv/
+.env
+.streamlit/secrets.toml
+
+# Generated artifacts
+data/processed/
+EOF

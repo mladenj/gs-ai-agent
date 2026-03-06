@@ -35,7 +35,11 @@ def _parse_serve(text: Any) -> Dict[str, Any]:
 def normalize_points(df: pd.DataFrame) -> pd.DataFrame:
     missing = [c for c in REQUIRED_COLS if c not in df.columns]
     if missing:
-        raise ValueError(f"CSV missing required columns: {missing}")
+        raise ValueError(
+            f"CSV missing required columns: {missing}. "
+            f"Expected columns: {REQUIRED_COLS}. "
+            f"Check if your CSV export format has changed or if column names differ."
+        )
 
     out = df.copy()
 

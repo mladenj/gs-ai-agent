@@ -2,10 +2,12 @@ from __future__ import annotations
 from typing import Any, Dict
 import numpy as np
 import pandas as pd
+import streamlit as st
 
 def _pct(x: float) -> float:
     return float(np.round(x * 100.0, 2))
 
+@st.cache_data
 def compute_match_stats(df: pd.DataFrame) -> Dict[str, Any]:
     use = df[df["discard_point"] != True].copy()  # noqa: E712
 
