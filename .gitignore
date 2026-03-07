@@ -14,3 +14,6 @@ __pycache__/
 # Generated artifacts
 data/processed/
 EOF
+
+# Local test data (do not commit)
+data/local_raw/
